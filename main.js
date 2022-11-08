@@ -86,17 +86,25 @@ function draw() {
     surface.Draw();
 }
 
+
 function CreateSurfaceData()
 {
     let vertexList = [];
     let a = 0.5;
     let c = 0.5;
-    for (let i = -10; i < 10; i+=0.1) {
-        for (let j = -10; j < 10; j += 0.1) {
-        let x = a * Math.sqrt(i * i + 1) * Math.cos(j);
-        let y = a * Math.sqrt(i * i + 1) * Math.sin(j);
+
+    let figureIncrease = Number(document.getElementById("figureIncrease").value);
+    let step = Number(document.getElementById("step").value);
+    let width = Number(document.getElementById("width").value)
+
+    btn.onclick = function(){surface.BufferData(CreateSurfaceData())}
+    
+    for (let i = -10; i < 10; i+=step) {
+        for (let j = -1; j < 5.28; j += 0.01) {
+        let x = a * Math.sqrt(i * i + width) * Math.cos(j);
+        let y = a * Math.sqrt(i * i + width) * Math.sin(j);
         let z = c * i;
-        vertexList.push(x/4, y/4, z/4);
+        vertexList.push(x/figureIncrease, y/figureIncrease, z/figureIncrease);
         }
     }
     return vertexList
