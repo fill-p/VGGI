@@ -17,11 +17,16 @@
 </head>
 <body onload="init()">
 
-<h2>A Cube with "Trackball" Mouse Rotation</h2>
+<h2>A Surface of Revolution of a Parabola with "Trackball" Mouse Rotation</h2>
 
-<p id="message">Drag your mouse on the cube to rotate it.<br>
+<p id="message">Drag your mouse on the figure to rotate it.<br>
 (On a touch screen, you can use your finger.)</p>
 
+figureIncrease: <input id="figureIncrease" type="text" value="5" /><br>
+width: <input id="width" type="text" value="5" /><br>
+step: <input id="step" type="text" value="0.1" /><br>
+
+<button id="btn">redraw</button>
 
 <div id="canvas-holder">
    <canvas width="600" height="600" id="webglcanvas" style="background-color:red"></canvas>
